@@ -1,0 +1,13 @@
+1) import 모듈(.py 파일)
+    ex) import Mycalc
+2) import 모듈 as 별칭
+    ex) import Mycalc as mc
+3) from 모듈 import 클래스(, 함수)
+    ex) from Mycalc import Calc
+4) from 모듈 import 클래스 as 별칭
+    ex) from Mycalc import Calc as cl
+5) from 모듈 import *
+    ex) from Mycalc import *
+=====================================================
+from inspect import * : 코드분석, 디버깅, 동적코드 조작등
+                      - inspect.signature(function) = python 3.0 추가 : 메소드 매개인자, 반환정보 등
