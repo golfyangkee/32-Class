@@ -1,0 +1,15 @@
+1. 에러 종류
+ZeroDivisionError : 0 으로 나눌 수 없다.
+IOError : 파일이 없다.
+NameError : 이름이 유효하지 않다.
+IndexError : 범위가 유효하지 않다.
+
+2. 작동 원리
+에러 발생 시 PVM(메모리 관리)가 traceback한테 위임
+PVM이 모든 정보를 sys 모듈한테 정보를 넘기고 거기서 Exception을 생성하면 당연히 위임받는 traceback으로 접근할 수 있다.
+
+파일 실행하고 에러 발생 시 콘솔 창에 error 메세지 나오는 원리
+PVM에서 실행 -> 프로그램 중단 -> traceback 이 중단된 추적대상, 추적위치 파악 -> 에러 원인 파악 -> PVM에게 알려줌(error객체 발생)
+ -> 오류가 난 곳에 message 를 통해서 던져줌 -> 클래스 생성 -> 클래스의 재정의된 메소드를 통해서 이 메세지가 리턴됨
+Error의 __str__ __repr__ 받음
+PVM이 Traceback을 통해서 Error의 __str__을 던졌어 어디다가 출력하려고 함 이걸 try~except가 받음 받아서 print 출력
