@@ -1,0 +1,18 @@
+https://www.oracletutorial.com/
+오라클 튜토리얼
+
+https://www.oracle.com/database/technologies/appdev/python/quickstartpythononprem.html
+오라클 데이터베이스
+
+https://oracle.github.io/python-oracledb/samples/tutorial/Python-and-Oracle-Database-The-New-Wave-of-Scripting.html
+오라클 db
+
+색생, 크기, 각도를(and and) 3가지를 변경하면 저작권에 걸리지 않는다.
+drawIO? 가서 쓰면 된다고 함?
+
+https://dev.mysql.com/doc/connector-python/en/connector-python-connection-pooling.html
+pool은 무슨 패키지 같은 느낌이다?
+풀링 커넥터로 나중에는 쓸 텐데 클라이언트가 아니라 서버에서 하는 거다.
+그래서 오라클 밑에 보면 커넥션 풀링이 있다.
+잘 보자.
+
