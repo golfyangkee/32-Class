@@ -1,0 +1,6 @@
+24.01.03 문제 - sqlite3랑 json - python connection 배움
+
+1. my_emp에 있는 emp 테이블과 dept 테이블을 csv로 변환한다.
+2. pandas 로 두개의 파일을 읽어가지고 와서 pandas 명령으로 JOIN_EXAM.SQL의 1번에서 7번까지 문제 풀기
+3. pandas로 emp, dept 두개의 csv를 json 파일로 내보내기 한다.
+
