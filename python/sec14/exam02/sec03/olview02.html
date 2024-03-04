@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<!-- ol.a1 .b1 이렇게 주는 거는 다른 의미이다. -->
+	<!-- 선택자 라는 용어로 부른다. # 기호로 불러오는 선택자(id는 일회성) class로 불러오는 선택자-->
+	<style>
+	ol.a1 {
+		    list-style-type: decimal;
+		}
+	.b1 {
+		    list-style-type: lower-alpha;
+		}
+	#c1 {
+		list-style-type: upper-alpha;
+		}
+	#d1 {
+		    list-style-type: lower-roman;
+		}
+	#e1 {
+		list-style-type: upper-roman;
+		}
+	</style>
+</head>
+<body>
+	<h3>카레를 만드는 방법</h3>
+	<!-- hr은 수평선 줄 하나 싹 긋는 것 -->
+	<hr width="450" color="#0000ff" align="left">
+	<!-- .으로 선언한 친구들은 class로 불로온다.-->
+	<ol class="a1">
+		<!-- 버전업 되면서 <li> </li> 쌍으로 안 줘도 되고 <li>만 줘도 된다 -->
+		<li>고기와 야채를 볶는다
+		<li>물을 넣고 중불에서 끓이면서 카레를 넣는다
+		<li>걸쭉 할 때 까지 약한 불로 끓인다
+	</ol>
+	<hr width="450" color="#0000ff" align="left">
+	<ol class="b1">
+		<li>고기와 야채를 볶는다
+		<li>물을 넣고 중불에서 끓이면서 카레를 넣는다
+		<li>걸쭉 할 때 까지 약한 불로 끓인다
+	</ol>
+	<!-- # 으로 선언한 친구들은 id로 불러오기 -->
+	<hr width="450" color="#0000ff" align="left">
+	<ol id="c1">
+		<li>고기와 야채를 볶는다
+		<li>물을 넣고 중불에서 끓이면서 카레를 넣는다
+		<li>걸쭉 할 때 까지 약한 불로 끓인다
+	</ol>
+	<hr width="450" color="#0000ff" align="left">
+	<ol id="d1">
+		<li>고기와 야채를 볶는다
+		<li>물을 넣고 중불에서 끓이면서 카레를 넣는다
+		<li>걸쭉 할 때 까지 약한 불로 끓인다
+	</ol>
+	<hr width="450" color="#0000ff" align="left">
+	<ol id="e1">
+		<li>고기와 야채를 볶는다
+		<li>물을 넣고 중불에서 끓이면서 카레를 넣는다
+		<li>걸쭉 할 때 까지 약한 불로 끓인다
+	</ol>
+</body>
+
+</html>

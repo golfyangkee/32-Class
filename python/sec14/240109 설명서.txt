@@ -1,0 +1,233 @@
+거기에 해당하는 데이터를 업데이트하면 다운로드 받아서 수집하는 것
+다운로드 해서 빨리 빨리 파싱해서 다운로드한 파일을 없애줘야
+웹 페이지를 다운로드해서 전체 문서 중에 원하는 글자만 추출해서 원하는 저장방법으로 저장하는 것
+나중에는 이부분이 문제가 된다.
+어떤 식으로 파싱해서 어떤 식으로 저장하는 지 다 다르다.
+회사마다 다르다 어떻게 하는 지
+요소별로 다 회사들이 있다.
+일반 파싱한 내용을 위탁하는 회사도 많고 무튼 그렇다.
+뷰티풀숩 주요 메소드 설명
+bs주요 메소드
+밸류 찾는다.
+
+finde() 첫번째 요소를 반환한다. 속성 명시 후 찾을 내용
+
+find_all()은 class 찾을 때 class_ 언더바가 들어간다.
+
+select() : css 선택자로 요소 찾음 p.mycLass #someid
+
+get_text()/.text : 요소를 통해 문자 밸류 리턴(.text) 혹은 숩 전체를 리턴(get_text())
+
+children : 자식들을 반복자 형태로 반환, 복수이다. 그래서 리스트 객체로 쓴다 그래서 리스트 객체가 가지고 있는 for 쓰면 된다.
+
+descendants
+parents
+next_siblings/previous_siblings
+children
+복수 형태
+
+sibling 들어가면 다음/이전 형제 반복자 형태로 반환
+
+E: element
+beautifulsoup()
+find
+find_all
+select
+get_text()/.text
+
+N: node
+children
+descendants
+parent
+parents
+next_sibling/previous_sibling
+next_siblings/previous_siblings
+
+타입으로 찾았다.
+
+finde랑 finde_all은 엘리먼트를 찾는게 목적 -> css -> Value
+select() 는 css 찾는게 목적 -> E -> Value
+
+뷰티풀숩 사이트에서
+attrs
+
+tag = BeautifulSoup('<b id="boldest">bold</b>', 'html.parser').b
+tag['id']
+# 'boldest'
+
+인덱스 객체로 받을 수 있다.
+id로 바로 추출하면 바로 리턴 받을 수 있고
+
+.attrs라는 부분이 있는데
+애는 키 밸류로 리턴값을 받을 수 있다.
+
+태그를 통해서 속성을 찾아오는 곳이다.
+
+이 친구들이 공백이 있으면 실제 못 찾아오니까 전체를 리턴하거나 반만 리턴하거나
+그래서 멀티풀이라는 속성을 반드시 주고 있다.
+하다가
+tag['id'] = 'verybold'
+tag['another-attribute'] = 1
+tag
+# <b another-attribute="1" id="verybold"></b>
+-> 맨 처음에 id 값 리턴 받고 태그를 하나 만들어서
+태그에 1이라는 값을 대입할 수도 있다.
+속성이 2개가 되었다.
+
+del tag['id']
+del tag['another-attribute']
+tag
+# <b>bold</b>
+-> del을 통해 태그 삭제 가능
+
+tag['id']
+# KeyError: 'id'
+tag.get('id')
+# None
+-> 마지막에 태그점 get을 주면 찾아온다는 건데 속성이나 태그를 찾아올때 사용할 수 있다. 직접 호출하면 에러난다.
+
+multi-valued attributes 를 주의 깊게 보자
+
+css_soup = BeautifulSoup('<p class="body strikeout"></p>', 'html.parser')
+css_soup.p['class']
+# ['body', 'strikeout']
+-> 공백이 있으면 문제가 발생할 수 있으니
+왜냐면 class 2개 가지고 오게 된다.
+
+## /exam/e.py 참고
+rel_soup = BeautifulSoup('<p>Back to the <a rel="index first">homepage</a></p>', 'html.parser')
+rel_soup.a['rel']
+# ['index', 'first']
+rel_soup.a['rel'] = ['index', 'contents']
+print(rel_soup.p)
+# <p>Back to the <a rel="index contents">homepage</a></p>
+
+e.py에 문제 주고 해보라고 하심
+1. 문서에 내용 추가
+2. 주소만 리턴
+3. 문자만 리턴
+
+Changing tag names and attributes¶
+
+modifying.string
+밑에 append()
+soup = BeautifulSoup("<a>Foo</a>", 'html.parser')
+soup.a.append("Bar")
+
+soup
+# <a>FooBar</a>
+soup.a.contents
+# ['Foo', 'Bar']
+
+4버전에는 extend() 추가됨
+soup = BeautifulSoup("<a>Soup</a>", 'html.parser')
+soup.a.extend(["'s", " ", "on"])
+
+soup
+# <a>Soup's on</a>
+soup.a.contents
+# ['Soup', ''s', ' ', 'on']
+
+from bs4 import NavigableString
+soup = BeautifulSoup("<b></b>", 'html.parser')
+tag = soup.b
+tag.append("Hello")
+new_string = NavigableString(" there")
+tag.append(new_string)
+tag
+# <b>Hello there.</b>
+tag.contents
+# ['Hello', ' there']
+
+숩.b
+해서 추가하는 법
+
+밑에
+주석을 추가할 수도 있다.
+
+4.4.0 추가된
+new_tag()
+하나 주면 태그가 추가되고 두번재는 속성이 추가된다.
+어팬드되면 태그만 추가되고
+스트링까지 넣어야 나온다.
+
+중간에 insert()있는데
+순서를 기점으로 추가해줌
+
+현재태그 이전 이후에 추가
+
+new_tag는
+밸류 없이 태그가 추가되고
+string으로 밸류 넣으면 같이 나온다.
+
+sec14/exam02/sec03(myweb에 있는거) 가지고 복사해뒀다.
+exam02/에 a b c d 파일 만듦
+
+a.py에 sec03의 olview.html 읽어가지고 오자고 하심
+문제 4개 정도 풀기
+
+b.py에 sec03의 olview02.html 읽어가지고 오자고 하심
+
+a 파일은 파인드로 밸류 가지고 왔는데
+b 파일은 파인드로 css 추출해서 탐색해보자.
+c 파일은 select로 추출해보자.
+
+이거 끝나면 미니 프로젝트를 할건데
+시각화 플젝 간단한거 팀별 조별로 해서 내야하는데
+조를 짤건데
+1번 어떤식으로 해야할지 : 나는 친한친구들이랑 하고 싶다. 하면 학생들이 짜고, 강사님이 짜고(랜덤), 멀티캠에서 짜고(성적순?)
+인원은 플젝할 때 3명이면 끝난다. 짝수로 하면 더 외롭고 홀수로 3명 좀 적다 하면 5명
+파이널은 3명해도 되는데 보통 친구들이 5명 정도 한다.
+가장 적당한거는 3명이다.
+첫번째 플젝은 시각화라 스트레스 받을게 없다. 기간도 짧고 2일인가 3일정도 조별 워크샵 느낌으로 진행할 거다.
+
+쉬는 시간 끝나고
+c d 파일로 태그 들 select 이랑 find_all로 찾음
+
+a_exweb.py 보기 시작
+24.01.09 오전 11시 14분 영상 1시 44분
+d까지 보고
+
+exam02 dp e.py 만듦
+
+점심 식사 후
+실질적으로 사이트 페이지 복사해서 보는 법 배우는 듯?
+
+쉬는 시간 한번 가지고
+sec14-g_webxml.py 진행
+
+etree 가지고 있는데
+이진트리로 만들어서 관리하는 거다
+뷰티풀숩처럼 똑같이 만들어서 사용할 수 있게 만든거다.
+수월하게 사용할 수 있다.
+
+sec15랑 sec14 왔다 갔다 하는 중
+
+이진트리에서
+속성을 겟으로 받으면 속성으로 나오고
+find로 찾아서 텍스르토 하면 된다.
+find_all 대신 findall
+find_one= find
+
+멀 자꾸 읽어보라는 데 멀 읽지..?? ㅋㅋㅋㅋ
+xml 막 하는데 머라는지 모르겠엉
+
+크롬 드라이버를 설치하게 되면
+
+중간에 크롬을 실행시켜서
+화요일만 추출하면
+실제 화요일 얘만 가져와
+화요일 애들만 이 브라우저가 뜨면서 채워
+이걸 가지고 다운로드 해서 파싱하는 것
+중간에 드라이버가 페이지 하나 만드는 것이다.
+
+selenium ver 4.6 수동드라이버 X
+https://www.selenium.dev/documentation/
+https://chromedriver.chromium.org/getting-started
+
+내일 간단 자바스트립트하고 장고 나가도록 하겠다.
+
+프로젝트 일정이 19일부터 원래 인데
+19일부터 한다고 하심
+아이템은 아직 안 받았으니까 아이템 받으면
+신고된거 받으면 공지하도록 하고 진행하도록 하겠습니다.

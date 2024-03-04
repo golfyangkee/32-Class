@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ulview</title>
+	<style>
+		#abc{
+			list-style-image: url("1.jpg");
+		}
+	ol.a1 {
+		    list-style-type: decimal;
+		}
+	.b1 {
+		    list-style-type: lower-alpha;
+		}
+	#c1 {
+		list-style-type: upper-alpha;
+		}
+	#d1 {
+		    list-style-type: lower-roman;
+		}
+	#e1 {
+		list-style-type: upper-roman;
+		}
+	</style>
+	</head>	
+	<body>
+		<h3>좋아하는 음식</h3>
+		<ol id="abc">
+			<li>봉골레 파스타
+			<li>갈릭패논 파스타
+			<li>시저 샐러드
+			<li>크램차우더 스프
+			</ol>
+			<!-- 중첩 가능한지 보자-->
+		<ul type="circle">
+			<li>봉골레 파스타2
+			<li>갈릭패논 파스타2
+			<li>시저 샐러드2
+			<li>크램차우더스프2
+		</ul>
+		<ol>
+			<li>봉골레 파스타3</li>
+			<li>갈릭패논 파스타3</li>
+			<li>시저 샐러드3</li>
+			<li>크램차우더스프3</li>
+		</ol>
+		<ol class="b1">
+			<li>봉골레 파스타4</li>
+			<li>갈릭패논 파스타4</li>
+			<li>시저 샐러드4</li>
+			<li>크램차우더스프4</li>
+		</ol>
+		<ul type="square">
+			<li>봉골레 파스타5
+			<li>갈릭패논 파스타5
+			<li>시저 샐러드5
+			<li>크램차우더 스프5
+		</ul>
+	</body>	
+	</html>
