@@ -1,0 +1,208 @@
+김예은(1)(2)(3)(4)(5)
+김지희(6)(7)(8)(9)(10)
+김태언(11)(12)(13)(14)(15)
+이경연(16)(17)(18)(19)(20)
+
+문제 1: 다음 중 파이썬에서 불변(immutable) 타입이 아닌 것은? 3
+1. 문자열 (String)
+2. 튜플 (Tuple)
+3. 리스트 (List)
+4. 정수 (Integer)
+>>> a = [1, 2, 3, 4, 5]
+
+문제 2: 파이썬에서 '//' 연산자는 무엇을 위해 사용됩니까? 4
+1. 나눗셈 후 소수점 이하를 버림
+2. 나눗셈 후 소수점 이하를 반올림
+3. 나눗셈 후 나머지 반환
+4. 정수 나눗셈 후 몫 반환
+>>> a = 100 //3
+>>>print(a)
+
+문제 3: 파이썬에서 어떤 키워드를 사용하여 무한 루프를 중단시킬 수 있나요? 1
+1. break
+2. continue
+3. pass
+4. exit
+while True:
+          print('a')
+           if(cnt == 3):
+                  break;
+           cnt +=1
+
+
+문제 4: 다음 중 파이썬의 리스트 메서드가 아닌 것은? 4
+1. append()
+2. insert()
+3. pop()
+4. remove_all()
+>>>dir(list)
+>>> a = [1, 2, 3]
+>>> a.append(4)
+ [1, 2, 3, 4]
+>>> a=[1, 2, 3]
+>>> a.insert(100, 200)
+>>> print(a)
+[1, 2, 3, 200]
+>>> a=[1, 2, 3]
+>>> a.pop(1)
+2
+
+
+문제 5: 파이썬에서 함수의 매개변수를 전달할 때, 기본값을 가질 수 있는 것은? 4
+1. 위치 매개변수
+2. 키워드 매개변수
+3. 가변 매개변수
+4. 모든 매개변수
+
+문제 6: 파이썬에서 'lambda'는 무엇을 위해 사용됩니까? 2
+1. 예외 처리
+2. 무명 함수 생성
+3. 반복문
+4. 조건문
+lambda [parameters]: expression
+
+문제 7: 파이썬에서 클래스를 정의할 때 사용하는 키워드는? 1
+1. class
+2. def
+3. new
+4. this
+class Myclass:
+
+문제 8: 다음 중 파이썬에서 문자열을 나타내는 방법이 아닌 것은? 3 4
+1. "Hello World"
+2. 'Hello World'
+3. ''Hello World''
+4. /'Hello World'
+print("Hello World")
+
+**
+File "C:\Users\merci\AppData\Local\Temp\ipykernel_1296\3144305688.py", line 1
+    print(''Hello World'')
+            ^
+SyntaxError: invalid syntax
+
+print(/'Hello World')
+
+File "C:\Users\merci\AppData\Local\Temp\ipykernel_1296\229033757.py", line 1
+    print(/'Hello World')
+          ^
+SyntaxError: invalid syntax
+
+문제 9: 파이썬에서 파일을 읽기 모드로 열 때 사용하는 문자는? 1
+1. 'r'
+2. 'w'
+3. 'a'
+4. 'x'
+f = open("file.txt", 'r')
+
+문제 10: 다음 중 파이썬의 딕셔너리 메서드가 아닌 것은? 4
+1. keys()
+2. values()
+3. items()
+4. push()
+>>> dir(dict)
+['__class__', '__class_getitem__',· · · (생략)· · ·  , 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+->push를 찾을 수 없습니다
+
+문제 11: 파이썬에서 리스트에 다른 리스트를 추가하는 메서드는? 1
+1. append()
+2. extend()
+3. insert()
+4. add()
+>> a1 = [1,2,3,4,5]
+>> a2 = [6,7,8,9,10]
+>> a1.append(a2)
+>> print(a1)
+[1, 2, 3, 4, 5, [6, 7, 8, 9, 10]]
+
+문제 12: 파이썬 함수 정의
+파이썬에서 함수를 정의할 때 사용하는 키워드는? 3
+1. func
+2. method
+3. def
+4. function
+>> def func_name():
+>> ...
+>> ...
+
+문제 13: 파이썬에서 'elif'는 무엇을 위해 사용됩니까? 2
+1. if문의 조건이 거짓일 때 실행
+2. 여러 조건을 체크하기 위해
+3. 예외 처리
+4. 루프 제어
+>>a= 3
+>>if a > 4 :
+>>    print('1')
+>>elif a >= 3:
+>>    print('2')
+>>else:
+>>    print('3')
+
+>> 2
+
+문제 14: 파이썬 상속
+다음 중 파이썬에서 자식 클래스에서 부모 클래스의 메서드를 호출할 때 사용하는 키워드는? 1
+1. super
+2. extend
+3. inherit
+4. parent
+>> class BB(AA):
+>>    def __init__(self,a,b):
+>>        super().__init__(a,b)
+
+문제 15: 다음 중 파이썬의 기본 데이터 타입이 아닌 것은? 4
+1. 문자열
+2. 정수
+3. 실수
+4. 객체
+>>파이썬 기본 데이터 타입(자료형) : bool , str , int , float , double , list , bytes , tuple , dict , set
+
+이경연(16)(17)(18)(19)(20)
+문제 16: 파이썬에서 리스트의 특정 요소를 삭제하는 메서드는? 1
+1. remove()
+2. delete()
+3. discard()
+4. pop()
+my_list = [1,2,3,4,5]
+my_list.remove(5)
+print(my_list)
+
+문제 17: 파이썬에서 'not' 키워드는 무엇을 위해 사용됩니까? 1
+1. 논리 연산자 NOT
+2. 조건문의 시작
+3. 함수의 정의
+4. 루프의 종료
+my_list=[1,2,3,4,5]
+print( 7 not in my_list) # True
+
+문제 18: 다음 중 파이썬에서 정수를 실수로 변환하는 방법은? 3
+1. int(x)
+2. str(x)
+3. float(x)
+4. list(x)
+float(4)
+
+문제 19: 파이썬의 'import' 키워드는 무엇을 위해 사용됩니까? 2
+1. 예외 처리
+2. 모듈 불러오기
+3. 함수 정의
+4. 루프 제어
+1) import 모듈(.py 파일)
+    ex) import Mycalc
+2) import 모듈 as 별칭
+    ex) import Mycalc as mc
+3) from 모듈 import 클래스(, 함수)
+    ex) from Mycalc import Calc
+4) from 모듈 import 클래스 as 별칭
+    ex) from Mycalc import Calc as cl
+5) from 모듈 import *
+    ex) from Mycalc import *
+import Calc
+
+문제 20: 파이썬에서 문자열의 길이를 반환하는 함수는? 1
+1. len()
+2. size()
+3. length()
+4. count()
+res="열심히 합시다"
+len(res) -> 7
